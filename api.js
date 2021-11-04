@@ -3,7 +3,6 @@ const PORT = process.env.PORT || 3000;
 const express = require('express')
 const app = express()
 
-
 mots = [
 "Afrique",
 "Aiguille",
@@ -408,14 +407,13 @@ mots = [
 ]
 
 function generateWords() {
-  l = []
-  for(i=0; i < 24; i++) l.append(mots[Math.random() % mots.length]);
-  return l
 }
 
 
 app.get('/mots', (req, res) => {
-  res.status(200).json(generateWords())
+  l = []
+  for(i=0; i < 24; i++) l.append(mots[Math.ceil(Math.random() * mots.length)]);
+  res.status(200).json(l)
 })
 
 app.listen(PORT, () => {
