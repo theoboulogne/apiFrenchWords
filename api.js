@@ -408,7 +408,7 @@ let mots = [
 
 
 app.get('/mots', (req, res) => {
-  let l = ["test"]
+  let l = [mots[0]]
   //for(let i=0; i < 24; i++) l.append(mots[0]);
   res.status(200).json(l)
 })
