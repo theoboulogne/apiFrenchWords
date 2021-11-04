@@ -410,7 +410,7 @@ let mots = [
 app.get('/mots', (req, res) => {
   let l = []
   for(let i=0; i < 24; i++) {
-    let randomint = Math.ceil(Math.random() * mots.length)
+    let randomint = Math.ceil(Math.random() * (mots.length-1))
     if(l.findIndex(mots[randomint]) == -1) l.push(mots[randomint]);
     else i--;
   }
