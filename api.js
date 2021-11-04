@@ -408,9 +408,9 @@ mots = [
 
 
 app.get('/mots', (req, res) => {
-  //l = []
-  //for(i=0; i < 24; i++) l.append(mots[Math.ceil(Math.random() * mots.length)]);
-  res.status(200).json([mots[0]])
+  l = []
+  for(i=0; i < 24; i++) l.append(mots[0]);
+  res.status(200).json(l)
 })
 
 app.listen(PORT, () => {
