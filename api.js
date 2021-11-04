@@ -408,8 +408,8 @@ let mots = [
 
 
 app.get('/mots', (req, res) => {
-  let l = [mots[0]]
-  //for(let i=0; i < 24; i++) l.append(mots[0]);
+  let l = []
+  for(let i=0; i < 24; i++) l.push(mots[Math.ceil(Math.random() * mots.length)]);
   res.status(200).json(l)
 })
 
