@@ -3,7 +3,7 @@ const PORT = process.env.PORT || 3000;
 const express = require('express')
 const app = express()
 
-mots = [
+let mots = [
 "Afrique",
 "Aiguille",
 "Aile",
@@ -408,8 +408,8 @@ mots = [
 
 
 app.get('/mots', (req, res) => {
-  l = []
-  for(i=0; i < 24; i++) l.append(mots[0]);
+  let l = []
+  for(let i=0; i < 24; i++) l.append(mots[0]);
   res.status(200).json(l)
 })
 
