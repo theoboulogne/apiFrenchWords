@@ -406,16 +406,37 @@ let mots = [
 "Œuf"
 ]
 
-
-app.get('/mots', (req, res) => {
+function getRandom(listMots){
   let l = []
   for(let i=0; i < 24; i++) {
-    let randomint = Math.ceil(Math.random() * (mots.length-1))
-    if(l.indexOf(mots[randomint]) == -1) l.push(mots[randomint]);
+    let randomint = Math.ceil(Math.random() * (listMots.length-1))
+    if(l.indexOf(listMots[randomint]) == -1) l.push(listMots[randomint]);
     else i--;
   }
-  res.status(200).json(l)
-})
+  return l;
+}
+
+app.get('/mots', (req, res) => {
+  res.status(200).json(getRandom(mots));
+});
+app.get('/geo', (req, res) => {
+  res.status(200).json(getRandom(mots));
+});
+app.get('/star', (req, res) => {
+  res.status(200).json(getRandom(mots));
+});
+app.get('/pop', (req, res) => {
+  res.status(200).json(getRandom(mots));
+});
+app.get('/hp', (req, res) => {
+  res.status(200).json(getRandom(mots));
+});
+app.get('/lotR', (req, res) => {
+  res.status(200).json(getRandom(mots));
+});
+app.get('/marvel', (req, res) => {
+  res.status(200).json(getRandom(mots));
+});
 
 app.listen(PORT, () => {
   console.warn(`App listening on http://localhost:${PORT}`);
